@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.feedback_on_school_meals.controller.DishRatingTableViewController">
+    <GridPane AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+        <rowConstraints>
+            <RowConstraints minHeight="26" percentHeight="15" />
+            <RowConstraints vgrow="ALWAYS" />
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="80"/>
+            <ColumnConstraints percentWidth="20"/>
+        </columnConstraints>
+
+        <HBox alignment="CENTER_LEFT">
+            <DatePicker fx:id="selectedDateDP" promptText="Выберите дату" onAction="#datePickerAction"/>
+
+            <Button text="Топ 3 проблемных блюда" onAction="#onProblematicDishBtn">
+                <HBox.margin>
+                    <Insets left="10"/>
+                </HBox.margin>
+            </Button>
+
+            <Button text="Тепловая карта" onAction="#onVisibleHeatTableView">
+                <HBox.margin>
+                    <Insets left="10"/>
+                </HBox.margin>
+            </Button>
+
+            <Button text="Получить в xlsx" onAction="#onGetFeedbackFromXLSX">
+                <HBox.margin>
+                    <Insets left="10"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+
+        <Button fx:id="backBtn" text="Назад" GridPane.columnIndex="1" GridPane.halignment="RIGHT" onAction="#onBackBtn"/>
+
+        <TableView fx:id="dishRatingTableView" GridPane.rowIndex="1" GridPane.columnSpan="2">
+            <columns>
+                <TableColumn fx:id="tableColumnDishName" text="Название" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnDishRating" text="Средняя оценка" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnRatingDate" text="Дата" prefWidth="200"/>
+                <TableColumn fx:id="tableColumnCountComplaint" text="Число жалоб" prefWidth="150" visible="false"/>
+            </columns>
+        </TableView>
+
+        <TableView fx:id="dishHeatTableView" GridPane.rowIndex="1" GridPane.columnSpan="2" visible="false">
+            <columns>
+                <TableColumn fx:id="tableColumnDishNameHeat" text="Блюдо" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnMonday" text="Понедельник" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnTuesday" text="Вторник" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnWednesday" text="Среда" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnThursday" text="Четверг" prefWidth="150"/>
+                <TableColumn fx:id="tableColumnFriday" text="Пятница" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+    </GridPane>
+</AnchorPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><?import java.lang.*?><?import java.util.*?><?import javafx.scene.*?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><?import javafx.geometry.Insets?>
+<GridPane fx:controller="com.example.feedback_on_school_meals.controller.DishesEditViewController"
+          xmlns:fx="http://javafx.com/fxml" prefHeight="400" prefWidth="400">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="30"/>
+        <ColumnConstraints percentWidth="70"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints vgrow="ALWAYS"/>
+        <RowConstraints percentHeight="10"/>
+    </rowConstraints>
+    <Label text="Название блюда" GridPane.halignment="RIGHT">
+        <GridPane.margin>
+            <Insets right="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </Label>
+    <TextField fx:id="dishNameTF" promptText="Укажите название" GridPane.columnIndex="1" maxWidth="250">
+        <GridPane.margin>
+            <Insets left="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </TextField>
+
+    <Label text="Категория блюда" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets right="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </Label>
+    <ComboBox fx:id="dishCategoryCB" promptText="Выберите значение" GridPane.columnIndex="1" GridPane.rowIndex="1"
+               maxWidth="250">
+        <GridPane.margin>
+            <Insets left="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </ComboBox>
+
+    <Label text="Минимальный вес" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+        <GridPane.margin>
+            <Insets right="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </Label>
+    <TextField fx:id="standardTempMinTF" promptText="Введите значение" GridPane.columnIndex="1" GridPane.rowIndex="2"
+               maxWidth="250">
+        <GridPane.margin>
+            <Insets left="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </TextField>
+
+    <Label text="Максимальный вес" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+        <GridPane.margin>
+            <Insets right="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </Label>
+    <TextField fx:id="standardTempMaxTF" promptText="Введите значение" GridPane.columnIndex="1" GridPane.rowIndex="3"
+               maxWidth="250">
+        <GridPane.margin>
+            <Insets left="5" top="10" bottom="10"/>
+        </GridPane.margin>
+    </TextField>
+
+    <HBox GridPane.rowIndex="5" alignment="BOTTOM_CENTER" GridPane.columnSpan="2">
+        <Button fx:id="saveBtn" text="Сохранить" onAction="#onSaveBtn">
+            <HBox.margin>
+                <Insets bottom="10" right="10"/>
+            </HBox.margin>
+        </Button>
+
+        <Button fx:id="cancelBtn" text="Отмена" onAction="#onCancelBtn">
+            <HBox.margin>
+                <Insets bottom="10" left="10"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</GridPane>
